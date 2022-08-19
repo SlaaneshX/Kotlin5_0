@@ -4,15 +4,12 @@ import org.junit.Assert.*
 import org.junit.Before
 
 class WallServiceTest {
-    @Before
-    fun clear() {
-        WallService.clear()
-    }
+
 
     @Test
     fun add() {
-        val ws = WallService
-        ws.clear()
+        val ws = WallService()
+
 
         val testPost = ws.add(Post(0, 123))
         assertEquals(1, testPost.id)
@@ -20,7 +17,7 @@ class WallServiceTest {
 
     @Test
     fun update_successful() {
-        val ws = WallService
+        val ws = WallService()
         ws.clear()
 
         ws.add(Post(ownerId = 123))
@@ -36,7 +33,7 @@ class WallServiceTest {
 
     @Test
     fun update_failed() {
-        val ws = WallService
+        val ws = WallService()
         ws.clear()
         ws.add(Post(ownerId = 123))
         ws.add(Post(ownerId = 124))

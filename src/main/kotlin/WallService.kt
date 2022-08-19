@@ -1,13 +1,9 @@
-object WallService {
+class WallService {
     var posts: Array<Post> = emptyArray<Post>()
     private var idCounter: Int = 0
 
     private fun returnNextId(): Int {
         return ++idCounter
-    }
-
-    fun clear() {
-        posts = emptyArray()
     }
 
     fun add(post: Post): Post {
