@@ -3,7 +3,7 @@ object WallService {
     private var idCounter: Int = 0
 
     private fun returnNextId(): Int {
-        return idCounter++
+        return ++idCounter
     }
 
     fun clear() {
@@ -19,9 +19,9 @@ object WallService {
 
     fun update(post: Post): Boolean {
         val id = post.id
-
         for ((index, currPost) in posts.withIndex()) {
             if (currPost.id == id) {
+//        Он должен находить среди всех постов запись с тем же id, что и у post и обновлять все свойства, кроме id владельца и даты создания.
                 val currDate = currPost.date
                 val currOwnerId = currPost.ownerId
                 posts[index] = post.copy(date = currDate, ownerId = currOwnerId)
