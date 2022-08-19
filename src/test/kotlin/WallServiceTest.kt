@@ -18,7 +18,6 @@ class WallServiceTest {
     @Test
     fun update_successful() {
         val ws = WallService()
-        ws.clear()
 
         ws.add(Post(ownerId = 123))
         ws.add(Post(ownerId = 124))
@@ -34,7 +33,6 @@ class WallServiceTest {
     @Test
     fun update_failed() {
         val ws = WallService()
-        ws.clear()
         ws.add(Post(ownerId = 123))
         ws.add(Post(ownerId = 124))
         ws.add(Post(ownerId = 125))
