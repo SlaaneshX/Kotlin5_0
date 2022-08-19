@@ -2,7 +2,6 @@ fun main() {
 
 }
 
-//Data класс Post (и другие классы, которые могут быть вложены в Post).
 data class Post(
     val id: Int,
     val ownerId: Int,
@@ -31,7 +30,3 @@ data class Likes(
     var canLike: Boolean = true,
     var canPublish: Boolean = true
 )
-
-object WallService {
-//Объект WallService, который внутри себя хранит посты в массиве.
-}
