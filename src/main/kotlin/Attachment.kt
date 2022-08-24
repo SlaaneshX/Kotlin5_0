@@ -2,33 +2,27 @@ interface Attachment {
     val type: String
 }
 
-class VideoAttachment(
-    val video: Video
-) : Attachment {
+fun mmmmm() {
+    val vType = VideoAttachment(Video(1, "Name")).type
+}
+
+class VideoAttachment(val video: Video) : Attachment {
     override val type: String = "video"
 }
 
-class AudioAttachment(
-    val audio: Audio
-) : Attachment {
+class AudioAttachment(val audio: Audio) : Attachment {
     override val type: String = "audio"
 }
 
-class DocAttachment(
-    val audio: Doc
-) : Attachment {
+class DocAttachment(val audio: Doc) : Attachment {
     override val type: String = "document"
 }
 
-class AppAttachment(
-    val audio: App
-) : Attachment {
+class AppAttachment(val audio: App) : Attachment {
     override val type: String = "application"
 }
 
-class GraffitiAttachment(
-    val audio: Graffiti
-) : Attachment {
+class GraffitiAttachment(val audio: Graffiti) : Attachment {
     override val type: String = "graffiti"
 }
 
