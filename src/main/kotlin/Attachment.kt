@@ -2,10 +2,6 @@ interface Attachment {
     val type: String
 }
 
-fun mmmmm() {
-    val vType = VideoAttachment(Video(1, "Name")).type
-}
-
 class VideoAttachment(val video: Video) : Attachment {
     override val type: String = "video"
 }
