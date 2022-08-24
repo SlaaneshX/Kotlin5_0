@@ -1,5 +1,5 @@
 fun main() {
-
+//    val post: Post = Post(1, arrayOf(AudioAttachment(Audio(1, "name.mp3")), VideoAttachment(Video(1, "name"))))
 }
 
 data class Post(
@@ -30,6 +30,7 @@ data class Post(
     var canPin: Boolean = false,
     var copyHistory: Array<Post>? = null,
     var signerId: Int = 0,
+    val attachment: Array<Attachment> = emptyArray()
 )
 
 data class Place(
@@ -101,3 +102,4 @@ data class Likes(
     var canLike: Boolean = true,
     var canPublish: Boolean = true
 )
+
