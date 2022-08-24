@@ -2,58 +2,58 @@ interface Attachment {
     val type: String
 }
 
-data class VideoAttachment(
+class VideoAttachment(
     val video: Video
 ) : Attachment {
     override val type: String = "video"
 }
 
-data class AudioAttachment(
+class AudioAttachment(
     val audio: Audio
 ) : Attachment {
     override val type: String = "audio"
 }
 
-data class DocAttachment(
+class DocAttachment(
     val audio: Doc
 ) : Attachment {
     override val type: String = "document"
 }
 
-data class AppAttachment(
+class AppAttachment(
     val audio: App
 ) : Attachment {
     override val type: String = "application"
 }
 
-data class GraffitiAttachment(
+class GraffitiAttachment(
     val audio: Graffiti
 ) : Attachment {
     override val type: String = "graffiti"
 }
 
-data class Audio(
+class Audio(
     val id: Int?,
     val name: String?
 )
 
-data class Video(
+class Video(
     val id: Int?,
     val name: String?
 )
 
-data class Doc(
+class Doc(
     val id: Int?,
     val name: String?
 
 )
 
-data class Graffiti(
+class Graffiti(
     val id: Int?,
     val name: String?
 )
 
-data class App(
+class App(
     val id: Int?,
     val name: String?
 )
