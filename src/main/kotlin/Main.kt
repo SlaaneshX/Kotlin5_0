@@ -13,7 +13,7 @@ data class Post(
     val replyPostId: Int? = null,
     val friendsOnly: Boolean = true,
     var comments: Comments? = null,
-    var likes: Likes = Likes(),
+    var likes: LikesPost = LikesPost(),
     var copyright: Copyright = Copyright(),
     var reposts: Reposts = Reposts(),
     var views: Views = Views(),
@@ -96,10 +96,9 @@ data class Reposts(
     val user_reposted: Int = 0
 )
 
-data class Likes(
+data class LikesPost(
     var count: Int = 0,
     var userLikes: Boolean = true,
     var canLike: Boolean = true,
     var canPublish: Boolean = true
 )
-
