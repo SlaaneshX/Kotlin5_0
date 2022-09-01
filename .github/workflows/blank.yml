@@ -1,8 +1,8 @@
 on:
   push:
-    branches: [ master, main, attach, attach_02 ]
+    branches: [ master, main, attach, comment ]
   pull_request:
-    branches: [ master, main, attach, attach_02 ]
+    branches: [ master, main, attach, comment ]
 
 jobs:
   build:
