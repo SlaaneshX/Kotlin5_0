@@ -1,5 +1,7 @@
 class WallService {
-    var posts: Array<Post> = emptyArray<Post>()
+    var posts: Array<Post> = emptyArray()
+    var comments: Array<Comment> = emptyArray()
+
     private var idCounter: Int = 0
 
     private fun returnNextId(): Int {
@@ -17,7 +19,6 @@ class WallService {
         val id = post.id
         for ((index, currPost) in posts.withIndex()) {
             if (currPost.id == id) {
-//        Он должен находить среди всех постов запись с тем же id, что и у post и обновлять все свойства, кроме id владельца и даты создания.
                 val currDate = currPost.date
                 val currOwnerId = currPost.ownerId
                 posts[index] = post.copy(date = currDate, ownerId = currOwnerId)
@@ -29,4 +30,33 @@ class WallService {
         return false
     }
 
+
+    fun createComment(comment: Comment) {
+        val postId = comment.postId
+        var foundPost = false
+
+        for ((index, currPost) in posts.withIndex()) {
+            if (postId == currPost.id) {
+                if (posts[index].comments == null) {
+                    posts[index].comments = Comments()
+                }
+
+                comments += comment
+                posts[index].comments?.count?.plus(1)
+                foundPost = true
+                break
+            }
+        }
+
+        if (!foundPost) {
+            throw PostNotFoundException("Пост с идентификатором $postId не найден.")
+        }
+    }
+
+    internal fun clearData() {
+        posts = emptyArray()
+        idCounter = 0
+        comments = emptyArray()
+        idCounter = 0
+    }
 }
